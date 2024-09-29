@@ -42,8 +42,8 @@ public class ProdutoService {
 	}
 
 	@Transactional
-    public boolean processarVenda(List<VendaDto.ProdutoVendaDto> produtosVendidos) {
-        for (VendaDto.ProdutoVendaDto produtoVenda : produtosVendidos) {
+    public boolean processarVenda(VendaDto produtosVendidos) {
+        for (VendaDto.ProdutoVendaDto produtoVenda : produtosVendidos.getProdutosVendidos()) {
             Optional<ProdutoModel> optionalItem = produtoRepository.findById(produtoVenda.getProdutoId());
             if (optionalItem.isPresent()) {
                 ProdutoModel produto = optionalItem.get();
@@ -55,7 +55,7 @@ public class ProdutoService {
             }
         }
 
-        for (VendaDto.ProdutoVendaDto produtoVenda : produtosVendidos) {
+        for (VendaDto.ProdutoVendaDto produtoVenda : produtosVendidos.getProdutosVendidos()) {
             ProdutoModel produto = produtoRepository.findById(produtoVenda.getProdutoId()).get();
             produto.setQuantidade(produto.getQuantidade() - produtoVenda.getQuantidadeVendida());
             produtoRepository.save(produto);

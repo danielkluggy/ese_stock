@@ -28,6 +28,9 @@ public class ProdutoModel {
 	@Column
 	private Integer quantidade;
 
+	@Column
+	private Integer valor;
+
 	public ProdutoModel() {
 	}
 
@@ -70,5 +73,13 @@ public class ProdutoModel {
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
 	}
+
+    public Integer getValor() {
+        return valor;
+    }
+
+    public void setValor(Integer valor) {
+        this.valor = valor;
+    }
 
 }
