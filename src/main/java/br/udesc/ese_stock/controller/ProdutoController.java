@@ -92,7 +92,7 @@ public class ProdutoController {
 	public ResponseEntity<Object> sellProducts(@RequestBody VendaDto vendaDto){
 
 		try {
-            boolean vendaSucesso = produtoService.processarVenda(vendaDto.getItensVendidos());
+            boolean vendaSucesso = produtoService.processarVenda(vendaDto);
 
             if (vendaSucesso) {
                 return ResponseEntity.status(HttpStatus.OK).body(getMessageSaleProcessedSuccessfully());

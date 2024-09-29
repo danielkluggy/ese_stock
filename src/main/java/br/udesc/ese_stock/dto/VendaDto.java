@@ -14,11 +14,11 @@ public class VendaDto {
 	@NotEmpty(message = "Lista de itens não pode ser vazia")
 	private List<ProdutoVendaDto> produtosVendidos;
 
-	public List<ProdutoVendaDto> getItensVendidos() {
+	public List<ProdutoVendaDto> getProdutosVendidos() {
 		return produtosVendidos;
 	}
 
-	public void setItensVendidos(List<ProdutoVendaDto> produtosVendidos) {
+	public void setProdutosVendidos(List<ProdutoVendaDto> produtosVendidos) {
 		this.produtosVendidos = produtosVendidos;
 	}
 
