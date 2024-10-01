@@ -29,7 +29,4 @@ public class ProdutoModel {
 	
 	@Column
 	private Integer quantidade;
-
-	@Column
-	private Integer valor;
 }
