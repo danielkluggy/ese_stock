@@ -25,10 +25,6 @@ spring:
   jackson:
     serialization:
       FAIL_ON_EMPTY_BEANS: false
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://eseeureka:8761/eureka
 
 openapi:
   service:
@@ -41,3 +37,13 @@ springdoc:
     path: /esestock/v3/api-docs
   swagger-ui:
     path: /esestock/swagger-ui.html
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+  metrics:
+    export:
+      prometheus:
+        enabled: true
